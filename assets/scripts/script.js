@@ -169,6 +169,7 @@ function addToBasket(book, i) {
     book_cart_del.classList.add('book_cart_del');
     book_cart_del.addEventListener('click', () => deleteBook(book, i))
     book_cart_info.append(book_cart_del);
+  
 
     const book_cart_price = document.createElement('p');
     book_cart_price.classList.add('book_cart_price');
@@ -204,3 +205,26 @@ function addToBasket(book, i) {
     book_cart_price.innerText = `${book.price}$ x ${num}`;
   }
 }
+
+
+function deleteBook(book, i) {
+
+  const book_card = document.getElementById(i);
+
+  const book_cart_price = book_card.querySelector('.book_cart_price');
+  let num = +book_cart_price.innerText[book_cart_price.innerText.length - 1];
+  let num_second = book_cart_price.innerText[book_cart_price.innerText.length - 2];
+  if (num_second !== ' ') {
+    num += +num_second * 10;
+  }
+  total_sum -= book.price * num;
+  total.innerText = `Total: ${total_sum}$`;
+
+  document.getElementById(i).remove();
+
+  if (!cart_container.firstChild)
+  {
+    info_cart.classList.remove('hidden');
+  }
+}
+
