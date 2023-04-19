@@ -138,3 +138,69 @@ window.addEventListener('click', function (event) {
     popup.classList.remove('open');
   }
 });
+
+
+/*add book to cart*/
+function addToBasket(book, i) {
+
+  if (document.getElementById(i) == null) {
+    info_cart.classList.add('hidden');
+    total_sum += book.price;
+    total.innerText = `Total: ${total_sum}$`;
+
+    const book_cart = document.createElement('div');
+    book_cart.classList.add('book_cart');
+    book_cart.id = i;
+
+    const cont = document.createElement('div');
+    book_cart.append(cont);
+
+    const book_cart_img = document.createElement('img');
+    book_cart_img.classList.add('book_cart_img');
+    book_cart_img.src = book.imageLink;
+    cont.append(book_cart_img);
+
+    const book_cart_info = document.createElement('div');
+    book_cart_info.classList.add('book_cart_info');
+    cont.append(book_cart_info);
+
+    const book_cart_del = document.createElement('button');
+    book_cart_del.innerText = 'X';
+    book_cart_del.classList.add('book_cart_del');
+    book_cart_del.addEventListener('click', () => deleteBook(book, i))
+    book_cart_info.append(book_cart_del);
+
+    const book_cart_price = document.createElement('p');
+    book_cart_price.classList.add('book_cart_price');
+    book_cart_price.innerText = `${book.price}$ x 1`;
+    book_cart_info.append(book_cart_price);
+
+    const book_cart_author = document.createElement('h5');
+    book_cart_author.innerText = book.author;
+    book_cart.append(book_cart_author);
+
+    const book_cart_title = document.createElement('h4');
+    book_cart_title.innerText = book.title;
+    book_cart.append(book_cart_title);
+
+    cart_container.append(book_cart);
+  } else {
+    const book_card = document.getElementById(i);
+    total_sum += book.price;
+    total.innerText = `Total: ${total_sum}$`;
+    const book_cart_price = book_card.querySelector('.book_cart_price');
+
+    let num = +book_cart_price.innerText[book_cart_price.innerText.length - 1];
+    let num_second = book_cart_price.innerText[book_cart_price.innerText.length - 2];
+    if (num_second !== ' ') {
+      num += +num_second * 10;
+    }
+    num++;
+    if (num > 99) {
+      num = 99;
+      total_sum -= book.price;
+      total.innerText = `Total: ${total_sum}$`;
+    }
+    book_cart_price.innerText = `${book.price}$ x ${num}`;
+  }
+}
