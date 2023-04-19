@@ -94,7 +94,7 @@ cart.append(total);
 const confirm_order = document.createElement('a');
 confirm_order.classList.add('confirm_order');
 confirm_order.innerText = 'Confirm order';
-confirm_order.href = '/pages/form/index.html';
+confirm_order.href = '../../pages/form/index.html';
 cart.append(confirm_order);
 
 main.append(cart);
