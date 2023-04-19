@@ -17,7 +17,6 @@ header img{
 
 .main{
     display: flex;
-
 }
 
 .catalog{
@@ -261,7 +260,6 @@ header img{
 }
 
 footer{
-    display: flex;
     background-color: #44b78b;
     justify-content: center;
     padding-top: 15px;
@@ -272,3 +270,11 @@ footer img{
     height: 40px;
     padding-right: 10px;
 }
+
+.footer_link{
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    justify-content: center;
+}
+

@@ -102,12 +102,18 @@ container.append(main);
 
 /*footer*/
 const footer = document.createElement('footer');
+const footer_link = document.createElement('a');
+footer_link.classList.add('footer_link');
+footer_link.href = "https://github.com/olesia-bliznuk";
+
 h3_footer = document.createElement('h3');
 const img_footer = document.createElement('img');
 img_footer.src = '../../assets/img/git-logo.png';
 h3_footer.innerText = 'olesia-bliznuk';
-footer.append(img_footer);
-footer.append(h3_footer);
+
+footer_link.append(img_footer);
+footer_link.append(h3_footer);
+footer.append(footer_link);
 container.append(footer);
 
 
