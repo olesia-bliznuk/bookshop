@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <img src="/assets/img/books.svg">
+        <h1>BookShop</h1>
+    </header>
+    <div class="main">
+        <h3>Please fill form</h3>
+        <fieldset class="contacts">
+            <legend>Contacts</legend>
+            <label for="name">Name</label>
+            <input type="text" name = "name" id="name" minlength="3" pattern="[A-Za-zА-Яа-я]+" required>
+            <label for="surname">Surname</label>
+            <input type="text" name = "surname" id="surname" minlength="3" pattern="[A-Za-zА-Яа-я]+" required>
+            <label for="date">Delivery date</label>
+            <input type="date" name = "date" id="date" required>
+            <label for="street">Street</label>
+            <input type="text" name = "street" id="street" pattern="[A-Za-zА-Яа-я]+" required>
+            <label for="houseNumber">House number</label>
+            <input type="text" name = "houseNumber" id="houseNumber" pattern="[0-9]+" required>
+            <label for="flatNumber">Flat number</label>
+            <input type="text" name = "flatNumber" id="flatNumber" pattern="[0-9]+" required>
+        </fieldset>
+        <fieldset>
+            <legend>Choose payment method</legend>
+            <div>
+                <input type="radio" id="paymentCash" name="payment" value="cash">
+            <label for="paymentCash">Cash</label>
+            </div>
+            <div>
+                <input type="radio" id="paymentCard" name="payment" value="card">
+            <label for="paymentCard">Card</label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Choose 2 gifts</legend>
+            <div>
+                <input type="checkbox" id="giftPack" name="gifts" value="pack">
+                <label for="giftPack">Pack as a gift</label>
+            </div>
+            <div>
+                <input type="checkbox" id="giftPostcard" name="gifts" value="postcard">
+                <label for="giftPostcard">Add postcard</label>
+            </div>
+            <div>
+                <input type="checkbox" id="giftDiscount" name="gifts" value="discount">
+                <label for="giftDiscount">Provide 2% discount to the next time</label>
+            </div>
+            <div>
+                <input type="checkbox" id="giftPen" name="gifts" value="pen">
+                <label for="giftPen">Branded pen or pencil</label>
+            </div>
+        </fieldset>
+        <button>Confirm order</button>
+    </div>
+    <footer><img src="/assets/img/git-logo.png">
+        <h3>olesia-bliznuk</h3>
+    </footer>
+</body>
+
+</html>
