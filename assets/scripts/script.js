@@ -139,6 +139,51 @@ window.addEventListener('click', function (event) {
   }
 });
 
+/* Drag and drop */
+
+
+window.addEventListener('dragstart', function(event) {
+  if (event.target.classList.contains('book_card')) {
+      let book = event.target;
+      book.classList.add('book_dragging');
+  }
+  if (event.target.classList.contains('book_card_img')) {
+      let book = event.target.parentElement;
+      book.classList.add('book_dragging');
+  }
+});
+
+window.addEventListener('dragend', function(event) {
+  if (event.target.classList.contains('book_card')) {
+      let book = event.target;
+      book.classList.remove('book_dragging');
+  }
+  if (event.target.classList.contains('book_card_img')) {
+      let book = event.target.parentElement;
+      book.classList.remove('book_dragging');
+  }
+});
+
+
+window.addEventListener('dragover', function(event) {
+      event.preventDefault();
+});
+
+window.addEventListener('drop', function(event) {
+  if (event.target.classList.contains('cart') || event.target.parentElement.classList.contains('cart_container')
+  || event.target.classList.contains('info_cart') || event.target.classList.contains('confirm_order')
+  || event.target.classList.contains('total') || event.target.classList.contains('title_cart')
+  || event.target.classList.contains('book_cart_info') || event.target.parentElement.classList.contains('book_cart')
+  || event.target.classList.contains('book_cart_img') || event.target.classList.contains('book_cart_del')
+  || event.target.parentElement.classList.contains('book_cart_info')) {
+      const book_dragging = document.querySelector('.book_dragging');
+      const title = book_dragging.querySelector('.title_book');
+      const book_select = data_books.findIndex((el) => el.title == title.innerText);
+      addToBasket(data_books[book_select], book_select);
+  }
+
+});
+
 
 /*add book to cart*/
 function addToBasket(book, i) {
