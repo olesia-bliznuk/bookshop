@@ -1,0 +1,274 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa', cursive;
+}
+
+header{
+    display: flex;
+    background-color: #44b78b;
+    justify-content: center;
+}
+
+header img{
+    width: 70px;
+    padding-right: 10px;
+}
+
+.main{
+    display: flex;
+
+}
+
+.catalog{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    padding: 40px;
+}
+
+.book_card{
+    width: 250px;
+    margin-bottom: 40px;
+    margin-right: 40px;
+    background-color: rgb(68, 183, 139, 0.2);
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
+}
+.book_card img{
+    width: 230px;
+    height: 301px;
+    margin-bottom: 10px;
+}
+
+.book_card h5{
+    color: #0d5530;
+    font-size: 16px;
+    margin: 0;
+    height: 20px;
+}
+
+.book_card h3{
+    font-size: 20px;
+    height: 70px;
+}
+
+.book_card button{
+    font-family: 'Comfortaa', cursive;
+    width: 230px;
+    height: 40px;
+    border-radius: 7px;
+    border: 2px solid #44b78b;
+    margin-top: 10px;
+    background-color: #fff;
+    font-size: 16px;
+    color: #0d5530;
+}
+
+.book_card button:hover{
+    background-color: #44b78b;
+    color: #fff;
+    transition: background-color 0.8s ease, color 0.6s ease;
+}
+
+.book_card p{
+    color: #0d5530;
+}
+
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
+.popup{
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 5;
+        display: none;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+}
+
+.popup.open{
+    display: block;
+}
+
+.popup_card {
+    background-color: #fff;
+    display: flex;
+    border-radius: 7px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: -180px 0 0 -325px;
+    width: 650px;
+    height: 327px;
+}
+
+.popup_card img{
+    width: 250px;
+    height: 327px;
+    border-radius: 7px 0px 0px 7px;
+}
+
+.popup_card h3{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.popup_card p{
+    font-size: 14px;
+    width: 350px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.button_close{
+    font-family: 'Comfortaa', cursive;
+    width: 401px;
+    height: 50px;
+    border-radius: 0px 0px 7px 0px;
+    border: 3px solid #44b78b;
+    margin-top: 10px;
+    margin-left: 0;
+    background-color: #44b78b;
+    font-size: 16px;
+    color: #fff;
+    position: absolute;
+    bottom: 0px;
+}
+
+.button_close:hover{
+    background-color: #fff;
+    color: #0d5530;
+    transition: background-color 0.8s ease, color 0.6s ease;
+}
+
+.cart{
+    border: 2px solid #44b78b;
+    margin: 40px 10px 70px 10px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.cart h3{
+    font-size: 30px;
+    padding: 20px 0 30px 0;
+    margin: 0;
+}
+
+.info_cart{
+    color: #0d5530;
+    font-size: 16px;
+}
+
+.info_cart.hidden{
+    display: none;
+}
+
+.total{
+    padding-top: 10px;
+    color: #000;
+    font-size: 20px;
+}
+
+.cart a{
+    font-family: 'Comfortaa', cursive;
+    display: block;
+    background-color: #44b78b;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    width: 290px;
+    height: 40px;
+    border-radius: 7px;
+    border: 2px solid #44b78b;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.cart a:hover{
+    background-color: #fff;
+    color: #44b78b;
+    transition: background-color 0.8s ease, color 0.6s ease;
+}
+
+
+/*books in cart*/
+
+.book_cart{
+    background-color: rgb(68, 183, 139, 0.2);
+    border-radius: 20px;
+    margin-bottom: 15px;
+    padding: 15px;
+    text-align: center;
+    width: 267px;
+}
+
+.book_cart img{
+    width: 90px;
+    height: 120px;
+}
+
+.book_cart div{
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.book_cart_info{
+    display: flex;
+    padding-left: 30px;
+    flex-direction: column;
+    text-align: left;
+    width: 142px;
+}
+
+.book_cart_info p{
+    padding-top: 10px;
+}
+
+.book_cart_info button{
+    background-color: #fff;
+    font-size: 16px;
+    color: #44b78b;
+    height: 30px;
+    width: 30px;
+    border-radius: 7px;
+    border: 2px solid #44b78b;
+    margin-left: 120px;
+}
+
+.book_cart_info button:hover{
+    background-color: #44b78b;
+    color: #fff;
+    transition: background-color 0.4s ease, color 0.6s ease;
+}
+
+.book_cart h5{
+    margin: 5px;
+    font-size: 12px;
+}
+
+.book_cart h4{
+    margin: 5px;
+    font-size: 14px;
+}
+
+footer{
+    display: flex;
+    background-color: #44b78b;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+footer img{
+    width: 40px;
+    height: 40px;
+    padding-right: 10px;
+}
