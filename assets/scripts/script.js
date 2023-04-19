@@ -109,3 +109,32 @@ h3_footer.innerText = 'olesia-bliznuk';
 footer.append(img_footer);
 footer.append(h3_footer);
 container.append(footer);
+
+
+const popup = document.createElement('div');
+popup.classList.add('popup');
+container.append(popup);
+
+/*popup*/
+function openPopup(book) {
+  popup.classList.add('open');
+  document.body.classList.add('stop-scrolling');
+  const popup_card = document.createElement('div');
+  popup_card.classList.add('popup_card');
+  popup_card.innerHTML = `
+        <img src="${book.imageLink}">
+        <div>
+          <h3>${book.title}</h3>
+          <p>${book.description}</p>
+          <button class = "button_close">Close</button>
+        </div>
+  `;
+  popup.append(popup_card);
+}
+
+window.addEventListener('click', function (event) {
+  if (event.target.classList.contains('button_close')) {
+    document.body.classList.remove('stop-scrolling');
+    popup.classList.remove('open');
+  }
+});
