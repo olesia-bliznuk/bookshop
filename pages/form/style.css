@@ -48,6 +48,17 @@ fieldset label{
     padding-top: 20px;
 }
 
+.contacts div{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.contacts div p{
+    color: red;
+    margin: 0;
+}
+
 .contacts input{
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 5px;
@@ -87,7 +98,7 @@ fieldset div input{
     transition: background-color 0.8s ease, color 0.6s ease;
 }
 
-button.disabled {
+button:disabled {
     pointer-events: none; 
     cursor: default; 
     background-color: rgb(13, 85, 48, 0.4);
@@ -188,4 +199,9 @@ footer img{
     background-color: #fff;
     color: #0d5530;
     transition: background-color 0.8s ease, color 0.6s ease;
+}
+
+
+input.error{
+    border: 2px solid red; 
 }

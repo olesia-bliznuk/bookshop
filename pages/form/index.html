@@ -17,55 +17,68 @@
         <img src="../../assets/img/books.svg">
         <h1>BookShop</h1>
     </header>
-     <form class="main" method="post" novalidate>
+    <form class="main" method="post" novalidate>
         <h3>Please fill form</h3>
         <fieldset class="contacts">
             <legend>Contacts</legend>
-            <label for="name">Name</label>
-            <input type="text" id="name" name = "name" required minlength="4" pattern="[A-Za-zА-Яа-я]+"/>
-            <label for="surname">Surname</label>
-            <input type="text" name = "surname" id="surname" minlength="3" pattern="[A-Za-zА-Яа-я]+" required>
-            <label for="date">Delivery date</label>
-            <input type="date" name = "date" id="date" required>
-            <label for="street">Street</label>
-            <input type="text" name = "street" id="street" pattern="[A-Za-zА-Яа-я]+" required>
-            <label for="houseNumber">House number</label>
-            <input type="text" name = "houseNumber" id="houseNumber" pattern="[0-9]+" required>
-            <label for="flatNumber">Flat number</label>
-            <input type="text" name = "flatNumber" id="flatNumber" pattern="[0-9]+" required> 
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" />
+            </div>
+            <div>
+                <label for="surname">Surname</label>
+                <input type="text" name="surname" id="surname">
+            </div>
+            <div>
+                <label for="date">Delivery date</label>
+                <input type="date" name="date" id="date" required>
+            </div>
+            <div>
+                <label for="street">Street</label>
+                <input class="valid" type="text" name="street" id="street" pattern="[A-Za-zА-Яа-я]+" required>
+            </div>
+            <div>
+                <label for="houseNumber">House number</label>
+                <input type="text" name="houseNumber" id="houseNumber">
+            </div>
+            <div>
+                <label for="flatNumber">Flat number</label>
+                <input type="text" name="flatNumber" id="flatNumber">
+            </div>
+
         </fieldset>
-        <fieldset>
+        <fieldset id="payment">
             <legend>Choose the payment type</legend>
             <div>
-                <input type="radio" id="paymentCash" name="payment" value="cash" checked>
-            <label for="paymentCash">Cash</label>
+                <input type="radio" id="paymentCash" name="payment" value="cash">
+                <label for="paymentCash">Cash</label>
             </div>
             <div>
                 <input type="radio" id="paymentCard" name="payment" value="card">
-            <label for="paymentCard">Card</label>
+                <label for="paymentCard">Card</label>
             </div>
         </fieldset>
-        <fieldset>
+        <fieldset id="checkboxGifts">
             <legend>Choose 2 gifts</legend>
             <div>
-                <input type="checkbox" id="giftPack" name="gifts" value="pack">
+                <input class="gift" type="checkbox" id="giftPack" name="gifts" value="pack">
                 <label for="giftPack">Pack as a gift</label>
             </div>
             <div>
-                <input type="checkbox" id="giftPostcard" name="gifts" value="postcard">
+                <input class="gift" type="checkbox" id="giftPostcard" name="gifts" value="postcard">
                 <label for="giftPostcard">Add postcard</label>
             </div>
             <div>
-                <input type="checkbox" id="giftDiscount" name="gifts" value="discount">
+                <input class="gift" type="checkbox" id="giftDiscount" name="gifts" value="discount">
                 <label for="giftDiscount">Provide 2% discount to the next time</label>
             </div>
             <div>
-                <input type="checkbox" id="giftPen" name="gifts" value="pen">
+                <input class="gift" type="checkbox" id="giftPen" name="gifts" value="pen">
                 <label for="giftPen">Branded pen or pencil</label>
             </div>
         </fieldset>
-        <button type="submit" id="confirm_order">Confirm order</button>
-    </form> 
+        <button type="submit" id="confirm_order" disabled>Confirm order</button>
+    </form>
     <footer>
         <a class="footer_link" href="https://github.com/olesia-bliznuk">
             <img src="../../assets/img/git-logo.png">
