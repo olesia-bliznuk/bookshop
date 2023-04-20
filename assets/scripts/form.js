@@ -95,16 +95,16 @@ surnamePerson.addEventListener('change', function () {
 });
 
 // validation date
-let today = new Date();
-today = new Date(today.setDate(today.getDate() + 1)).toISOString().split('T')[0];
+let tomorrow = new Date();
+tomorrow = new Date(tomorrow.setDate(tomorrow.getDate() + 1)).toISOString().split('T')[0];
 const dateDelivery = document.querySelector('#date');
-dateDelivery.setAttribute('min', today);
+dateDelivery.setAttribute('min', tomorrow);
 dateDelivery.addEventListener('change', function () {
-    if (dateDelivery.value.length > 0) {
+    if (dateDelivery.value.length > 0 && dateDelivery.value >= tomorrow) {
         rightRegExp(dateDelivery);
     }
     else {
-        wrongRegExp(dateDelivery, '*The field should contain at least 5 symbols, the numbers are allowed');
+        wrongRegExp(dateDelivery, '*The field contains wrong date');
     }
 });
 
