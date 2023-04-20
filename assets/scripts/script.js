@@ -182,7 +182,7 @@ window.addEventListener('drop', function(event) {
   || event.target.classList.contains('total') || event.target.classList.contains('title_cart')
   || event.target.classList.contains('book_cart_info') || event.target.parentElement.classList.contains('book_cart')
   || event.target.classList.contains('book_cart_img') || event.target.classList.contains('book_cart_del')
-  || event.target.parentElement.classList.contains('book_cart_info')) {
+  || event.target.parentElement.classList.contains('book_cart_info') || event.target.classList.contains('cart_container')) {
       const book_dragging = document.querySelector('.book_dragging');
       const title = book_dragging.querySelector('.title_book');
       const book_select = data_books.findIndex((el) => el.title == title.innerText);
