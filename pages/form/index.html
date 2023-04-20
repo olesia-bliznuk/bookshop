@@ -14,15 +14,15 @@
 
 <body>
     <header>
-        <img src="/assets/img/books.svg">
+        <img src="../../assets/img/books.svg">
         <h1>BookShop</h1>
     </header>
-    <div class="main">
+     <form class="main" method="post" novalidate>
         <h3>Please fill form</h3>
         <fieldset class="contacts">
             <legend>Contacts</legend>
             <label for="name">Name</label>
-            <input type="text" name = "name" id="name" minlength="3" pattern="[A-Za-zА-Яа-я]+" required>
+            <input type="text" id="name" name = "name" required minlength="4" pattern="[A-Za-zА-Яа-я]+"/>
             <label for="surname">Surname</label>
             <input type="text" name = "surname" id="surname" minlength="3" pattern="[A-Za-zА-Яа-я]+" required>
             <label for="date">Delivery date</label>
@@ -32,12 +32,12 @@
             <label for="houseNumber">House number</label>
             <input type="text" name = "houseNumber" id="houseNumber" pattern="[0-9]+" required>
             <label for="flatNumber">Flat number</label>
-            <input type="text" name = "flatNumber" id="flatNumber" pattern="[0-9]+" required>
+            <input type="text" name = "flatNumber" id="flatNumber" pattern="[0-9]+" required> 
         </fieldset>
         <fieldset>
-            <legend>Choose payment method</legend>
+            <legend>Choose the payment type</legend>
             <div>
-                <input type="radio" id="paymentCash" name="payment" value="cash">
+                <input type="radio" id="paymentCash" name="payment" value="cash" checked>
             <label for="paymentCash">Cash</label>
             </div>
             <div>
@@ -64,11 +64,21 @@
                 <label for="giftPen">Branded pen or pencil</label>
             </div>
         </fieldset>
-        <button>Confirm order</button>
-    </div>
-    <footer><img src="/assets/img/git-logo.png">
-        <h3>olesia-bliznuk</h3>
+        <button type="submit" id="confirm_order">Confirm order</button>
+    </form> 
+    <footer>
+        <a class="footer_link" href="https://github.com/olesia-bliznuk">
+            <img src="../../assets/img/git-logo.png">
+            <h3>olesia-bliznuk</h3>
+        </a>
     </footer>
+
+    <div class="final_form">
+        <div class="final_card">
+        </div>
+    </div>
+
+    <script src="../../assets/scripts/form.js"></script>
 </body>
 
 </html>

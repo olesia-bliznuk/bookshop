@@ -93,6 +93,7 @@ cart.append(total);
 
 const confirm_order = document.createElement('a');
 confirm_order.classList.add('confirm_order');
+confirm_order.classList.add('disabled');
 confirm_order.innerText = 'Confirm order';
 confirm_order.href = '../../pages/form/index.html';
 cart.append(confirm_order);
@@ -196,6 +197,7 @@ function addToBasket(book, i) {
 
   if (document.getElementById(i) == null) {
     info_cart.classList.add('hidden');
+    confirm_order.classList.remove('disabled');
     total_sum += book.price;
     total.innerText = `Total: ${total_sum}$`;
 
@@ -275,6 +277,7 @@ function deleteBook(book, i) {
 
   if (!cart_container.firstChild)
   {
+    confirm_order.classList.add('disabled');
     info_cart.classList.remove('hidden');
   }
 }
