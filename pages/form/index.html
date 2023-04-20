@@ -17,17 +17,17 @@
         <img src="../../assets/img/books.svg">
         <h1>BookShop</h1>
     </header>
-    <form class="main" method="post" novalidate>
+    <form class="main">
         <h3>Please fill form</h3>
         <fieldset class="contacts">
             <legend>Contacts</legend>
             <div>
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" />
+                <input type="text" id="name" name="name" required>
             </div>
             <div>
                 <label for="surname">Surname</label>
-                <input type="text" name="surname" id="surname">
+                <input type="text" name="surname" id="surname" required>
             </div>
             <div>
                 <label for="date">Delivery date</label>
@@ -35,17 +35,16 @@
             </div>
             <div>
                 <label for="street">Street</label>
-                <input class="valid" type="text" name="street" id="street" pattern="[A-Za-zА-Яа-я]+" required>
+                <input class="valid" type="text" name="street" id="street" required>
             </div>
             <div>
                 <label for="houseNumber">House number</label>
-                <input type="text" name="houseNumber" id="houseNumber">
+                <input type="text" name="houseNumber" id="houseNumber" required>
             </div>
             <div>
                 <label for="flatNumber">Flat number</label>
-                <input type="text" name="flatNumber" id="flatNumber">
+                <input type="text" name="flatNumber" id="flatNumber" required>
             </div>
-
         </fieldset>
         <fieldset id="payment">
             <legend>Choose the payment type</legend>
@@ -85,7 +84,6 @@
             <h3>olesia-bliznuk</h3>
         </a>
     </footer>
-
     <div class="final_form">
         <div class="final_card">
         </div>

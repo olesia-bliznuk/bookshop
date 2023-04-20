@@ -1,4 +1,5 @@
-const container = document.querySelector('.container');
+const fragment = document.createDocumentFragment();
+const bodyElement = document.querySelector('body');
 
 /*header*/
 const header = document.createElement('header');
@@ -8,7 +9,7 @@ img_header.src = '../../assets/img/books.svg';
 h1.innerText = 'BookShop';
 header.append(img_header);
 header.append(h1);
-container.append(header);
+fragment.appendChild(header);
 
 /*main*/
 const main = document.createElement('div');
@@ -99,7 +100,7 @@ confirm_order.href = '../../pages/form/index.html';
 cart.append(confirm_order);
 
 main.append(cart);
-container.append(main);
+fragment.appendChild(main);
 
 /*footer*/
 const footer = document.createElement('footer');
@@ -115,12 +116,11 @@ h3_footer.innerText = 'olesia-bliznuk';
 footer_link.append(img_footer);
 footer_link.append(h3_footer);
 footer.append(footer_link);
-container.append(footer);
-
+fragment.appendChild(footer);
 
 const popup = document.createElement('div');
 popup.classList.add('popup');
-container.append(popup);
+fragment.appendChild(popup);
 
 /*popup*/
 function openPopup(book) {
@@ -138,6 +138,11 @@ function openPopup(book) {
   `;
   popup.append(popup_card);
 }
+
+
+bodyElement.appendChild(fragment);
+
+
 
 window.addEventListener('click', function (event) {
   if (event.target.classList.contains('button_close')) {
