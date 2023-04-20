@@ -139,10 +139,7 @@ function openPopup(book) {
   popup.append(popup_card);
 }
 
-
 bodyElement.appendChild(fragment);
-
-
 
 window.addEventListener('click', function (event) {
   if (event.target.classList.contains('button_close')) {
@@ -153,49 +150,46 @@ window.addEventListener('click', function (event) {
 
 /* Drag and drop */
 
-
-window.addEventListener('dragstart', function(event) {
+window.addEventListener('dragstart', function (event) {
   if (event.target.classList.contains('book_card')) {
-      let book = event.target;
-      book.classList.add('book_dragging');
+    let book = event.target;
+    book.classList.add('book_dragging');
   }
   if (event.target.classList.contains('book_card_img')) {
-      let book = event.target.parentElement;
-      book.classList.add('book_dragging');
+    let book = event.target.parentElement;
+    book.classList.add('book_dragging');
   }
 });
 
-window.addEventListener('dragend', function(event) {
+window.addEventListener('dragend', function (event) {
   if (event.target.classList.contains('book_card')) {
-      let book = event.target;
-      book.classList.remove('book_dragging');
+    let book = event.target;
+    book.classList.remove('book_dragging');
   }
   if (event.target.classList.contains('book_card_img')) {
-      let book = event.target.parentElement;
-      book.classList.remove('book_dragging');
+    let book = event.target.parentElement;
+    book.classList.remove('book_dragging');
   }
 });
 
-
-window.addEventListener('dragover', function(event) {
-      event.preventDefault();
+window.addEventListener('dragover', function (event) {
+  event.preventDefault();
 });
 
-window.addEventListener('drop', function(event) {
+window.addEventListener('drop', function (event) {
   if (event.target.classList.contains('cart') || event.target.parentElement.classList.contains('cart_container')
-  || event.target.classList.contains('info_cart') || event.target.classList.contains('confirm_order')
-  || event.target.classList.contains('total') || event.target.classList.contains('title_cart')
-  || event.target.classList.contains('book_cart_info') || event.target.parentElement.classList.contains('book_cart')
-  || event.target.classList.contains('book_cart_img') || event.target.classList.contains('book_cart_del')
-  || event.target.parentElement.classList.contains('book_cart_info') || event.target.classList.contains('cart_container')) {
-      const book_dragging = document.querySelector('.book_dragging');
-      const title = book_dragging.querySelector('.title_book');
-      const book_select = data_books.findIndex((el) => el.title == title.innerText);
-      addToBasket(data_books[book_select], book_select);
+    || event.target.classList.contains('info_cart') || event.target.classList.contains('confirm_order')
+    || event.target.classList.contains('total') || event.target.classList.contains('title_cart')
+    || event.target.classList.contains('book_cart_info') || event.target.parentElement.classList.contains('book_cart')
+    || event.target.classList.contains('book_cart_img') || event.target.classList.contains('book_cart_del')
+    || event.target.parentElement.classList.contains('book_cart_info') || event.target.classList.contains('cart_container')) {
+    const book_dragging = document.querySelector('.book_dragging');
+    const title = book_dragging.querySelector('.title_book');
+    const book_select = data_books.findIndex((el) => el.title == title.innerText);
+    addToBasket(data_books[book_select], book_select);
   }
 
 });
-
 
 /*add book to cart*/
 function addToBasket(book, i) {
@@ -227,7 +221,7 @@ function addToBasket(book, i) {
     book_cart_del.classList.add('book_cart_del');
     book_cart_del.addEventListener('click', () => deleteBook(book, i))
     book_cart_info.append(book_cart_del);
-  
+
 
     const book_cart_price = document.createElement('p');
     book_cart_price.classList.add('book_cart_price');
@@ -262,13 +256,10 @@ function addToBasket(book, i) {
     }
     book_cart_price.innerText = `${book.price}$ x ${num}`;
   }
-}
-
+};
 
 function deleteBook(book, i) {
-
   const book_card = document.getElementById(i);
-
   const book_cart_price = book_card.querySelector('.book_cart_price');
   let num = +book_cart_price.innerText[book_cart_price.innerText.length - 1];
   let num_second = book_cart_price.innerText[book_cart_price.innerText.length - 2];
@@ -280,10 +271,9 @@ function deleteBook(book, i) {
 
   document.getElementById(i).remove();
 
-  if (!cart_container.firstChild)
-  {
+  if (!cart_container.firstChild) {
     confirm_order.classList.add('disabled');
     info_cart.classList.remove('hidden');
   }
-}
+};
 

@@ -1,6 +1,13 @@
 const form = document.querySelector('form');
 form.addEventListener('submit', totalOrder);
 
+form.addEventListener('blur', (event) => {
+    if (event.target.value.length == 0) {
+        event.target.classList.remove('valid');
+        event.target.classList.add('error');
+    }
+}, true);
+
 //final form 
 function totalOrder() {
     const name = document.querySelector('#name').value;
@@ -19,8 +26,7 @@ function totalOrder() {
     <h4>Delivery date: ${dateDelivery}</h4>
     <h4>Thanks for your order!</h4>
     <a href='../../pages/main/index.html' class = "button_close">OK</a>`;
-}
-
+};
 
 //validation form
 function validationForm() {
@@ -71,8 +77,7 @@ namePerson.addEventListener('change', function () {
     if (regExp.test(namePerson.value) && namePerson.value.length > 3) {
         rightRegExp(namePerson);
     }
-    else
-    {
+    else {
         wrongRegExp(namePerson, '*The field should contain only letters without spaces and at least 4 symbols');
     }
 });
@@ -84,8 +89,7 @@ surnamePerson.addEventListener('change', function () {
     if (regExp.test(surnamePerson.value) && surnamePerson.value.length > 4) {
         rightRegExp(surnamePerson);
     }
-    else
-    {
+    else {
         wrongRegExp(surnamePerson, '*The field should contain only letters without spaces and at least 5 symbols');
     }
 });
@@ -99,12 +103,10 @@ dateDelivery.addEventListener('change', function () {
     if (dateDelivery.value.length > 0) {
         rightRegExp(dateDelivery);
     }
-    else
-    {
+    else {
         wrongRegExp(dateDelivery, '*The field should contain at least 5 symbols, the numbers are allowed');
     }
 });
-
 
 // validation flat street
 const street = document.querySelector('#street');
@@ -113,12 +115,10 @@ street.addEventListener('change', function () {
     if (regExp.test(street.value) && street.value.length > 4) {
         rightRegExp(street);
     }
-    else
-    {
+    else {
         wrongRegExp(street, '*The field should contain at least 5 symbols, the numbers are allowed');
     }
 });
-
 
 // validation house number
 const houseNumber = document.querySelector('#houseNumber');
@@ -127,8 +127,7 @@ houseNumber.addEventListener('change', function () {
     if (regExp.test(houseNumber.value) && houseNumber.value.length > 0) {
         rightRegExp(houseNumber);
     }
-    else
-    {
+    else {
         wrongRegExp(houseNumber, '*The field should contain only positive numbers');
     }
 });
@@ -140,34 +139,32 @@ flatNumber.addEventListener('change', function () {
     if (regExp.test(flatNumber.value) && flatNumber.value.length > 0) {
         rightRegExp(flatNumber);
     }
-    else
-    {
+    else {
         wrongRegExp(flatNumber, '*The field should contain positive numbers only, the dash symbol is allowed');
     }
 });
 
-
-
-
-function rightRegExp (element) {
+function rightRegExp(element) {
     element.classList.add('valid');
     element.classList.remove('error');
     const parentElement = element.parentElement;
     const errorText = parentElement.querySelector('.errorText');
     if (errorText) errorText.parentNode.removeChild(errorText);
     validationForm();
-}
+};
 
-function wrongRegExp (element, text) {
+function wrongRegExp(element, text) {
     element.classList.remove('valid');
     element.classList.add('error');
     const parentElement = element.parentElement;
-    const errorText = document.createElement('p');
-    errorText.innerText = text;
-    errorText.classList.add('errorText');
-    parentElement.append(errorText);
+    if (!parentElement.querySelector('.errorText')) {
+        const errorText = document.createElement('p');
+        errorText.innerText = text;
+        errorText.classList.add('errorText');
+        parentElement.append(errorText);
+    }
     validationForm();
-}
+};
 
 
 

@@ -1,31 +1,31 @@
-body{
+body {
     margin: 0;
     padding: 0;
     font-family: 'Comfortaa', cursive;
 }
 
-header{
+header {
     display: flex;
     background-color: #44b78b;
     justify-content: center;
 }
 
-header img{
+header img {
     width: 70px;
     padding-right: 10px;
 }
 
-.main{
+.main {
     margin: 0 auto;
     width: 70%;
     padding: 20px;
 }
 
-.main h3{
+.main h3 {
     font-size: 28px;
 }
 
-fieldset{
+fieldset {
     margin-bottom: 20px;
     margin-right: 20px;
     background-color: rgb(68, 183, 139, 0.2);
@@ -35,31 +35,31 @@ fieldset{
     flex-direction: column;
 }
 
-fieldset legend{
+fieldset legend {
     font-size: 20px;
     color: #0d5530;
 }
 
-fieldset label{
+fieldset label {
     font-size: 18px;
 }
 
-.contacts{
+.contacts {
     padding-top: 20px;
 }
 
-.contacts div{
+.contacts div {
     display: flex;
     flex-direction: column;
     margin: 0;
 }
 
-.contacts div p{
+.contacts div p {
     color: red;
     margin: 0;
 }
 
-.contacts input{
+.contacts input {
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 5px;
     font-size: 18px;
@@ -67,20 +67,19 @@ fieldset label{
     height: 30px;
     margin-top: 10px;
     margin-bottom: 15px;
-
 }
 
-fieldset div{
+fieldset div {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-fieldset div input{
+fieldset div input {
     height: 16px;
     width: 16px;
 }
 
-.main button{
+.main button {
     font-family: 'Comfortaa', cursive;
     width: 250px;
     height: 50px;
@@ -92,33 +91,32 @@ fieldset div input{
     color: #fff;
 }
 
-.main button:hover{
+.main button:hover {
     background-color: #fff;
     color: #44b78b;
     transition: background-color 0.8s ease, color 0.6s ease;
 }
 
 button:disabled {
-    pointer-events: none; 
-    cursor: default; 
+    pointer-events: none;
+    cursor: default;
     background-color: rgb(13, 85, 48, 0.4);
 }
 
-
-footer{
+footer {
     display: flex;
     background-color: #44b78b;
     justify-content: center;
     padding-top: 15px;
 }
 
-footer img{
+footer img {
     width: 40px;
     height: 40px;
     padding-right: 10px;
 }
 
-.footer_link{
+.footer_link {
     text-decoration: none;
     color: #000;
     display: flex;
@@ -126,31 +124,28 @@ footer img{
     line-height: 8px;
 }
 
-
-
-
 .stop-scrolling {
     height: 100%;
     overflow: hidden;
 }
 
-.final_form{
-        position: fixed;
-        left: 0;
-        top: 0;
-        z-index: 5;
-        display: none;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.5);
+.final_form {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-    .final_form.open{
+.final_form.open {
     display: block;
-    }
+}
 
-    .final_card {
+.final_card {
     background-color: #fff;
     display: flex;
     border-radius: 7px;
@@ -166,19 +161,18 @@ footer img{
     overflow-y: scroll;
 }
 
-.final_card h3{
+.final_card h3 {
     font-size: 22px;
     margin: 25px;
     text-align: center;
 }
 
-.final_card h4{
+.final_card h4 {
     font-size: 18px;
     margin: 10px;
 }
 
-
-.button_close{
+.button_close {
     font-family: 'Comfortaa', cursive;
     width: 201px;
     height: 50px;
@@ -195,13 +189,12 @@ footer img{
     margin-top: 20px;
 }
 
-.button_close:hover{
+.button_close:hover {
     background-color: #fff;
     color: #0d5530;
     transition: background-color 0.8s ease, color 0.6s ease;
 }
 
-
-input.error{
-    border: 2px solid red; 
+input.error {
+    border: 2px solid red;
 }
